@@ -1,0 +1,34 @@
+Criação do banco de dados:
+
+O código começa com a criação do banco de dados chamado "ssql" usando o comando CREATE DATABASE ssql; 
+Seleção do banco de dados:
+
+Em seguida, o comando USE ssql; é usado para selecionar o banco de dados "ssql" para que todas as operações subsequentes sejam realizadas nele.
+Criação da tabela "alunos":
+
+A próxima parte do código cria uma tabela chamada "alunos" com as seguintes colunas:
+"id" (chave primária, auto incrementada)
+"nome" (texto, não nulo)
+"turma" (texto, não nulo)
+"ano" (inteiro, não nulo)
+"nota" (decimal, não nulo)
+"aprovado" (enumeração com os valores 'Aprovado', 'Recuperação' e 'Reprovado').
+Criação da tabela "professores":
+
+Em seguida, é criada uma tabela chamada "professores" com as seguintes colunas:
+"id" (chave primária, auto incrementada)
+"nome" (texto, não nulo).
+Inserção de dados na tabela "professores":
+
+O código insere três registros na tabela "professores" com os nomes 'Professor A', 'Professor B' e 'Professor C' usando o comando INSERT INTO professores (nome) VALUES ('Professor A'), ('Professor B'), ('Professor C'); 
+Inserção de dados na tabela "alunos":
+
+Em seguida, são inseridos três registros na tabela "alunos" com os seguintes valores:
+'Aluno 1', 'Turma A', 2023, 7.5, 'Aprovado'
+'Aluno 2', 'Turma B', 2023, 5.2, 'Recuperação'
+'Aluno 3', 'Turma A', 2023, 3.8, 'Reprovado'
+Isso é feito usando o comando INSERT INTO alunos (nome, turma, ano, nota, aprovado) VALUES ('Aluno 1', 'Turma A', 2023, 7.5, 'Aprovado'), ('Aluno 2', 'Turma B', 2023, 5.2, 'Recuperação'), ('Aluno 3', 'Turma A', 2023, 3.8, 'Reprovado'); 
+Consulta de dados:
+
+Por fim, é realizada uma consulta na tabela "alunos" juntamente com a tabela "professores" usando o comando SELECT alunos.nome, professores.nome AS professor, alunos.turma, alunos.ano, alunos.aprovado FROM alunos JOIN professores ON alunos.id = professores.id;.
+Essa consulta retorna os nomes dos alunos, o nome do professor associado a cada aluno, a turma, o ano e o status de aprovação de cada aluno.
