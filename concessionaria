@@ -1,0 +1,39 @@
+Abra o MySQL: 
+
+Crie o banco de dados:
+CREATE DATABASE IF NOT EXISTS cc;
+
+Use o banco de dados: Digite o seguinte comando para selecionar o banco de dados "cc":
+USE cc;
+
+Crie a tabela:
+CREATE TABLE IF NOT EXISTS carros (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  modelo VARCHAR(100),
+  ano_fabricacao INT,
+  potencia INT,
+  valor DECIMAL(10, 2),
+  status VARCHAR(10)
+);
+
+Insira dados de exemplo:
+INSERT INTO carros (modelo, ano_fabricacao, potencia, valor, status)
+VALUES
+  ('Carro Novo 1', 2023, 200, 100000.00, 'novo'),
+  ('Carro Novo 2', 2023, 180, 80000.00, 'novo'),
+  ('Carro Usado 1', 2018, 150, 50000.00, 'usado'),
+  ('Carro Usado 2', 2017, 170, 60000.00, 'usado');
+
+Execute a consulta:
+SELECT 'Novos' AS Tipo, modelo, NULL AS ano_fabricacao, potencia, valor
+FROM carros
+WHERE status = 'novo'
+
+UNION ALL
+
+SELECT 'Usados' AS Tipo, modelo, ano_fabricacao, potencia, valor
+FROM carros
+WHERE status = 'usado';
+
+Isso deve permitir que você execute o código no MySQL e obtenha os resultados desejados.
+
